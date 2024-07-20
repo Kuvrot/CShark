@@ -1,9 +1,5 @@
-   ____ ____  _                _    
-  / ___/ ___|| |__   __ _ _ __| | __
- | |   \___ \| '_ \ / _` | '__| |/ /
- | |___ ___) | | | | (_| | |  |   < 
-  \____|____/|_| |_|\__,_|_|  |_|\_\
-                                    
+# CShark
+ A simple and dumb programming language based on a shark
 
              .';
          .-'` .'
@@ -17,5 +13,3 @@
               `'--....(`- ,__..--'
                        '-'`
 
-# CShark
- a simple programming language based on a shark

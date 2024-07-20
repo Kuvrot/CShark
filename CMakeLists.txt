@@ -19,3 +19,12 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Add tests and install targets if needed.
+
+
+# Copy initfile.txt to the output directory
+add_custom_command(
+    TARGET CShark POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_SOURCE_DIR}/initfile.txt
+        ${CMAKE_BINARY_DIR}/initfile.txt
+)

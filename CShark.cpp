@@ -31,7 +31,6 @@ bool isNumber(std::string arg);
 
 int main()
 {
-	
 	//Splash screen
 	std::fstream initFile;
 
@@ -56,8 +55,8 @@ int interpreter() {
 
 		std::string code = "";
 
-		std::cout << std::endl;
-		std::cout << "cshark> ";
+		std::cout << std::endl << "}c_^_> ";
+			
 		std::getline(std::cin, code);
 		
 		std::istringstream iss(code);
@@ -77,7 +76,7 @@ int interpreter() {
 						std::cout << data[position];
 					}
 					else {
-						std::cout << commands[programCounter + 1];
+						std::cout << commands[programCounter + 1] << " ";
 					}
 				}
 				else {
@@ -98,7 +97,7 @@ int interpreter() {
 				if (programCounter + 2 < commands.size()) {
 					if (!isNumber(commands[programCounter + 1])) {	
 						
-						int position = find(commands[programCounter + 1]);
+						int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
 
 						if (position < 0) {
 							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;

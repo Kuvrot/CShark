@@ -70,18 +70,14 @@ int interpreter() {
 
 			if (commands[programCounter] == "glup") {
 				if (programCounter + 1 < commands.size()) {
-					try {
-						int temp = find(commands[programCounter + 1]);
+					int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
 
-						if (temp > -1) {
-							std::cout << data[temp];
-						}
-						else {
-							std::cout << commands[programCounter + 1];
-						}
+					// If the variable does not exist, the method will return -1
+					if (position > -1) {
+						std::cout << data[position];
 					}
-					catch (int errorNumber) {
-						std::cout << "sdsd";
+					else {
+						std::cout << commands[programCounter + 1];
 					}
 				}
 				else {
@@ -102,20 +98,20 @@ int interpreter() {
 				if (programCounter + 2 < commands.size()) {
 					if (!isNumber(commands[programCounter + 1])) {	
 						
-						int temp = find(commands[programCounter + 1]);
+						int position = find(commands[programCounter + 1]);
 
-						if (temp < 0) {
+						if (position < 0) {
 							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
 						}
 
 						if (isNumber(commands[programCounter + 2])) {
-							data[temp] += std::stoi(commands[programCounter + 2]);
+							data[position] += std::stoi(commands[programCounter + 2]);
 						}
 						else {
-							int temp2 = find(commands[programCounter + 2]);
+							int secondArgumentPosition = find(commands[programCounter + 2]);
 
-							if (temp2 > 0) {
-								data[temp] += data[temp2];
+							if (secondArgumentPosition > 0) {
+								data[position] += data[secondArgumentPosition];
 							}
 							else {
 								std::cout << "Syntax error on bite function: " << commands[programCounter + 2] << " symbol does not exist" << std::endl;

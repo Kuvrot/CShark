@@ -1,5 +1,5 @@
 # CShark
- A simple and dumb programming language based on a shark
+ A simple and dumb interpreted programming language inspired on a shark and assembly x86.
 
 ![imagen](https://github.com/user-attachments/assets/2bcfda6c-a730-46b9-b977-277354a69de1)
 

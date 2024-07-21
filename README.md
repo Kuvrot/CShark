@@ -1,17 +1,10 @@
 # CShark
  A simple and dumb programming language based on a shark
 
-             .';
-         .-'` .'
-       ,`.-'-.`\
-      ; /     '-'
-      | \       ,-,
-      \  '-.__   )_`'._
-       '.     ```      ``'--._
-      .-' ,                   `'-.
-       '-'`-._           ((   o   )
-              `'--....(`- ,__..--'
-                       '-'`
+![imagen](https://github.com/user-attachments/assets/2bcfda6c-a730-46b9-b977-277354a69de1)
+
+#Docs
+The documentation can be found on the [Wiki](https://github.com/Kuvrot/CShark/wiki)
 
 # Compiling
 

@@ -128,12 +128,152 @@ int interpreter() {
 					break;
 				}
 			}
+			else if (commands[programCounter] == "sub") {
+				if (programCounter + 2 < commands.size()) {
+					if (!isNumber(commands[programCounter + 1])) {
+
+						int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
+
+						if (position < 0) {
+							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+							break;
+						}
+
+						if (isNumber(commands[programCounter + 2])) {
+							data[position] -= std::stoi(commands[programCounter + 2]);
+						}
+						else {
+							int secondArgumentPosition = find(commands[programCounter + 2]);
+
+							if (secondArgumentPosition > 0) {
+								data[position] -= data[secondArgumentPosition];
+							}
+							else {
+								std::cout << "Syntax error on bite function: " << commands[programCounter + 2] << " symbol does not exist" << std::endl;
+							}
+						}
+					}
+					else {
+						std::cout << "Syntax error on bite function: First argument of sum can not be a number" << std::endl;
+						break;
+					}
+				}
+				else {
+					std::cout << "Syntax error on bite function: Two arguments are required" << std::endl;
+					break;
+				}
+			}
+			else if (commands[programCounter] == "mul") {
+				if (programCounter + 2 < commands.size()) {
+					if (!isNumber(commands[programCounter + 1])) {
+
+						int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
+
+						if (position < 0) {
+							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+							break;
+						}
+
+						if (isNumber(commands[programCounter + 2])) {
+							data[position] *= std::stoi(commands[programCounter + 2]);
+						}
+						else {
+							int secondArgumentPosition = find(commands[programCounter + 2]);
+
+							if (secondArgumentPosition > 0) {
+								data[position] *= data[secondArgumentPosition];
+							}
+							else {
+								std::cout << "Syntax error on bite function: " << commands[programCounter + 2] << " symbol does not exist" << std::endl;
+							}
+						}
+					}
+					else {
+						std::cout << "Syntax error on bite function: First argument of sum can not be a number" << std::endl;
+						break;
+					}
+				}
+				else {
+					std::cout << "Syntax error on bite function: Two arguments are required" << std::endl;
+					break;
+				}
+			}
+			else if (commands[programCounter] == "div") {
+				if (programCounter + 2 < commands.size()) {
+					if (!isNumber(commands[programCounter + 1])) {
+
+						int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
+
+						if (position < 0) {
+							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+							break;
+						}
+
+						if (isNumber(commands[programCounter + 2])) {
+							data[position] /= std::stoi(commands[programCounter + 2]);
+						}
+						else {
+							int secondArgumentPosition = find(commands[programCounter + 2]);
+
+							if (secondArgumentPosition > 0) {
+								data[position] /= data[secondArgumentPosition];
+							}
+							else {
+								std::cout << "Syntax error on bite function: " << commands[programCounter + 2] << " symbol does not exist" << std::endl;
+							}
+						}
+					}
+					else {
+						std::cout << "Syntax error on bite function: First argument of sum can not be a number" << std::endl;
+						break;
+					}
+				}
+				else {
+					std::cout << "Syntax error on bite function: Two arguments are required" << std::endl;
+					break;
+				}
+			}
+			else if (commands[programCounter] == "mod") {
+				if (programCounter + 2 < commands.size()) {
+					if (!isNumber(commands[programCounter + 1])) {
+
+						int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
+
+						if (position < 0) {
+							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+							break;
+						}
+
+						if (isNumber(commands[programCounter + 2])) {
+							data[position] %= std::stoi(commands[programCounter + 2]);
+						}
+						else {
+							int secondArgumentPosition = find(commands[programCounter + 2]);
+
+							if (secondArgumentPosition > 0) {
+								data[position] %= data[secondArgumentPosition];
+							}
+							else {
+								std::cout << "Syntax error on bite function: " << commands[programCounter + 2] << " symbol does not exist" << std::endl;
+							}
+						}
+					}
+					else {
+						std::cout << "Syntax error on bite function: First argument of sum can not be a number" << std::endl;
+						break;
+					}
+				}
+				else {
+					std::cout << "Syntax error on bite function: Two arguments are required" << std::endl;
+					break;
+				}
+			}
 			else if (commands[programCounter] == "splash") {
 				system("cls");
 			}
 			else if (commands[programCounter] == "catch") { //input function
 				if (programCounter + 1 >= 0) {
-					
+
 					int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
 
 					if (position < 0) {
@@ -146,7 +286,8 @@ int interpreter() {
 				}
 				else {
 					std::cout << "Syntax error on catch function, no variable to store it was found" << std::endl;
-				}			
+				}
+			}
 			programCounter++;
 		}
 

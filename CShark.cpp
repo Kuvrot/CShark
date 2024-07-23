@@ -101,6 +101,7 @@ int interpreter() {
 
 						if (position < 0) {
 							std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+							break;
 						}
 
 						if (isNumber(commands[programCounter + 2])) {
@@ -130,7 +131,22 @@ int interpreter() {
 			else if (commands[programCounter] == "splash") {
 				system("cls");
 			}
-			
+			else if (commands[programCounter] == "catch") { //input function
+				if (programCounter + 1 >= 0) {
+					
+					int position = find(commands[programCounter + 1]); //This finds the position of the variable and returns it
+
+					if (position < 0) {
+						std::cout << "Syntax error on bite function: " << commands[programCounter + 1] << " symbol does not exist" << std::endl;
+						break;
+					}
+					else {
+						std::cin >> data[position];
+					}
+				}
+				else {
+					std::cout << "Syntax error on catch function, no variable to store it was found" << std::endl;
+				}			
 			programCounter++;
 		}
 

@@ -3,7 +3,7 @@
 
 ![imagen](https://github.com/user-attachments/assets/2bcfda6c-a730-46b9-b977-277354a69de1)
 
-#Docs
+# Docs
 The documentation can be found on the [Wiki](https://github.com/Kuvrot/CShark/wiki)
 
 # Compiling
@@ -31,3 +31,5 @@ git clone https://github.com/Kuvrot/CShark.git
     cmake -S . -B build
     cmake --build build --config Release
     ```
+***
+![imagen](https://github.com/user-attachments/assets/6559d6e4-587b-4fc0-bd6a-2d81a01f6334)
